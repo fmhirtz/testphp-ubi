@@ -1,7 +1,7 @@
 FROM registry.redhat.io/ubi7/ubi
 #FROM registry.access.redhat.com/ubi7/ubi
 
-RUN yum -y install --disableplugin=subscription-manager httpd24 rh-php72 rh-php72-php \
+RUN yum -y install --disableplugin=subscription-manager httpd24 rh-php72 rh-php72-php dracut-fips\
   && yum --disableplugin=subscription-manager clean all
 
 ADD index.php /opt/rh/httpd24/root/var/www/html
